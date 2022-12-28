@@ -4,7 +4,7 @@ var throttle = require('lodash.throttle');
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 const KEY_LOCAL = 'videoplayer-current-time';
-player.on('timeupdate', throttle(onPlay, 1000));
+// player.on('timeupdate', throttle(1000));
 player.on('timeupdate', function (data) {
   const timeOff = JSON.stringify(data);
   localStorage.setItem(KEY_LOCAL, timeOff);
